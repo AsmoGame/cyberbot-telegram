@@ -42,8 +42,10 @@ import logging
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from config import TOKEN
 from handlers.basic import start, help_command
+from handlers.news import news
 
 logging.basicConfig(level=logging.INFO)
+logging.getLogger("httpx").setLevel(logging.WARNING)
 
 async def echo(update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f"Recibí: {update.message.text}")
@@ -52,6 +54,7 @@ def main():
     app = Application.builder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
+    app.add_handler(CommandHandler("news", news))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
     app.run_polling()
 

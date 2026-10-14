@@ -11,5 +11,5 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Comandos disponibles:\n"
         "/start - Iniciar\n"
-        "/help - Ayuda"
-    )
+        "/help - Ayuda\n"
+        "/news - Ultimas noticias de ciberseguridad"    )
