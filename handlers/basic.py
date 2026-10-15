@@ -12,4 +12,9 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Comandos disponibles:\n"
         "/start - Iniciar\n"
         "/help - Ayuda\n"
-        "/news - Ultimas noticias de ciberseguridad"    )
+        "/news - Ultimas noticias de ciberseguridadn\n"    
+        "/subscribete - Recibe Noticias Automaticas Diarias\n"
+        "/unsubscribe - Dejar de recibir notificaciones\n"
+        
+        )
+        

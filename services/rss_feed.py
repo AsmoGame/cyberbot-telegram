@@ -20,3 +20,14 @@ def get_latest_news(limit_per_source=3):
                 "link": entrada.get("link", "Sin enlace")
             })
     return resultado
+
+def format_news_message(noticias):
+    if not noticias:
+        return None
+    """Formatea la noticia en un mensaje legible"""
+    mensaje = "📰 Noticias de Ciberseguridad de hoy\n\n"
+    for n in noticias:
+        mensaje += f"📰 Fuente: {noticia['fuente']}\n"
+        mensaje += f"🔗 Título: {noticia['titulo']}\n"
+        mensaje += f"🌐 Enlace: {noticia['link']}\n\n"
+    return mensaje
