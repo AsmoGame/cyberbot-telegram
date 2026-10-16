@@ -44,6 +44,7 @@ from config import TOKEN
 from handlers.basic import start, help_command
 from handlers.news import news
 from handlers.subscripcion import subscribe, unsubscribe
+from handlers.analyzer import analyze
 from services.db import init_db, obtener_suscriptores
 from services.rss_feed import get_latest_news, format_news_message
 
@@ -73,6 +74,7 @@ def main():
     app.add_handler(CommandHandler("news", news))
     app.add_handler(CommandHandler("subscribe", subscribe))
     app.add_handler(CommandHandler("unsubscribe", unsubscribe))
+    app.add_handler(CommandHandler("analyze", analyze))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
     
     # Programa el envio diario a las 8 de la mañana

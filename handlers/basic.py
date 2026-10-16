@@ -15,6 +15,6 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/news - Ultimas noticias de ciberseguridadn\n"    
         "/subscribete - Recibe Noticias Automaticas Diarias\n"
         "/unsubscribe - Dejar de recibir notificaciones\n"
-        
+        "/analyze <link o mensaje> - Analiza si es phishing"
         )
         
